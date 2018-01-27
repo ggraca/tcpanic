@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4681784701269442}
   - component: {fileID: 212463384553561504}
   - component: {fileID: 61779557207941388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
   m_TagString: floor
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: abf45936f2bb446da8aacab7f80fdc7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
