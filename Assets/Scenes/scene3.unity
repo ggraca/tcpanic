@@ -560,6 +560,12 @@ Prefab:
       propertyPath: ui_timer
       value: 
       objectReference: {fileID: 489734317}
+    - target: {fileID: 114335922213174626, guid: faf69121ac4104b8d937b3ffd44ac057,
+        type: 2}
+      propertyPath: levelAudioPrefab
+      value: 
+      objectReference: {fileID: 1258525871395314, guid: 5574c75e1728146edbd8b114f56ca142,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faf69121ac4104b8d937b3ffd44ac057, type: 2}
   m_IsPrefabParent: 0

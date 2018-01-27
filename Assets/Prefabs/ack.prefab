@@ -103,6 +103,13 @@ MonoBehaviour:
   moveMultiplier: 10
   jumpMultiplier: 70
   fallMultiplier: 1.5
+  maxJumps: 2
+  jumpAudioPrefab: {fileID: 1768806399595564, guid: a038c489e0c5940e288801a2888198a1,
+    type: 2}
+  deathAudioPrefab: {fileID: 1976894206215140, guid: b1e4cbe3caa504ff5bd0a130382e8de1,
+    type: 2}
+  routerAudioPrefab: {fileID: 1071802763445212, guid: d57ff91af509842fcbb30ec2864adfd5,
+    type: 2}
 --- !u!212 &212958200484346340
 SpriteRenderer:
   m_ObjectHideFlags: 1
