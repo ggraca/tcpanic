@@ -35,7 +35,7 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(state == "holding"){
-			if(	Input.GetKeyDown("up") || Input.GetKeyDown("left") || Input.GetKeyDown("right")){
+			if(	Input.GetKey("left") || Input.GetKey("right") || Input.GetButton("Jump")){
 				state = "running";
 			}
 		}

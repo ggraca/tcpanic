@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   moveMultiplier: 10
-  jumpMultiplier: 70
+  jumpMultiplier: 95
   fallMultiplier: 1.5
   friction: 0.92
   maxJumps: 2
