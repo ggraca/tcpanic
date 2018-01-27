@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114339815960731922}
   - component: {fileID: 61043095881804918}
   - component: {fileID: 61751118265296764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: package
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: abf45936f2bb446da8aacab7f80fdc7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
