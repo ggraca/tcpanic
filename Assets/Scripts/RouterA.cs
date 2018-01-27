@@ -14,6 +14,9 @@ public class RouterA : MonoBehaviour {
 		if(gl.state != "acking") return;
 
 		if(coll.CompareTag("Player")) {
+			Player player = (Player) GameObject.FindObjectOfType(typeof(Player));
+			player.PlaySound("router");
+			
 			gl.SaveScore();
 		}
     }

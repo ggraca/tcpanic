@@ -16,12 +16,19 @@ public class GameLogic : MonoBehaviour {
 
 	public GameObject packagePrefab;
 	public GameObject ackPrefab;
+	public GameObject levelAudioPrefab;
+
+	private AudioSource levelAudio;
+
 	private GameObject player = null;
 
 	public Text ui_timer;
 
 	// Use this for initialization
 	void Start () {
+		if(levelAudioPrefab != null) levelAudio = Instantiate(levelAudioPrefab).GetComponent<AudioSource>();
+		if(levelAudio != null && !levelAudio.isPlaying) levelAudio.Play();
+
 		SetupLevel();
 	}
 	
@@ -38,6 +45,7 @@ public class GameLogic : MonoBehaviour {
 			ui_timer.text = time_left.ToString();
 
 			if(time_left <= 0){
+				KillPlayer();
 				SetupLevel();
 				return;
 			}
@@ -46,9 +54,6 @@ public class GameLogic : MonoBehaviour {
 
 	void SetupLevel(){
 		state = "holding";
-
-		if(player != null)
-			Destroy(player);
 		
 		time_left = level_time;
 		ui_timer.text = time_left.ToString();
@@ -61,15 +66,29 @@ public class GameLogic : MonoBehaviour {
 		state = "running";
 	}
 
+	void KillPlayer() {
+		if(player != null) {
+			player.GetComponent<Player>().PlaySound("death");
+			Destroy(player);
+		}
+	}
+
 	public void ChangeMode(){
 		if(state != "running")
 			return;
 		state = "acking";
-		
-		if(player != null)
-			Destroy(player);
-		player = Instantiate(ackPrefab, routerB.transform.Find("spawn").position, Quaternion.identity);
 
+		Vector2 ack_position = routerB.transform.Find("spawn").position;
+		Vector2 ack_velocity = new Vector2();
+		
+		if(player != null) {
+			ack_position = player.transform.position;
+			ack_velocity = player.GetComponent<Rigidbody2D>().velocity;
+			Destroy(player);
+		}
+		
+		player = Instantiate(ackPrefab, ack_position, Quaternion.identity);
+		player.GetComponent<Rigidbody2D>().velocity = ack_velocity;
 	}
 
 	public void SaveScore(){
