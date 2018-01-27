@@ -14,6 +14,9 @@ public class RouterB : MonoBehaviour {
 		if(gl.state != "running") return;
 
 		if(coll.CompareTag("Player")) {
+			Player player = (Player) GameObject.FindObjectOfType(typeof(Player));
+			player.PlaySound("router");
+
 			gl.ChangeMode();
 		}
     }
