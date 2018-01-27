@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4546633365494472}
   - component: {fileID: 212606475604756966}
-  - component: {fileID: 114434676930400048}
   - component: {fileID: 61736647878923726}
+  - component: {fileID: 114299141563437856}
   m_Layer: 0
   m_Name: Router A
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.0039062, y: 3}
   m_EdgeRadius: 0
---- !u!114 &114434676930400048
+--- !u!114 &114299141563437856
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1144463241282096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ccf6b72dc424cb8915583a59479ac9, type: 3}
+  m_Script: {fileID: 11500000, guid: fd784a8549d974a4fa9e11808fbf5674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212606475604756966
