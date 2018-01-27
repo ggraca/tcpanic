@@ -44,7 +44,7 @@ public class GameLogic : MonoBehaviour {
 			time_left -= Time.deltaTime;
 			ui_timer.text = time_left.ToString();
 
-			if(time_left <= 0){
+			if(time_left <= 0 || player.transform.position.y < -1){
 				KillPlayer();
 				SetupLevel();
 				return;
