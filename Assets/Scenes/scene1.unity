@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941305370072410, guid: 9443c3d66258e4647b6210543d851b46, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4941305370072410, guid: 9443c3d66258e4647b6210543d851b46, type: 2}
       propertyPath: m_LocalScale.x
@@ -168,11 +168,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4001829114093178, guid: 09a1fa29451504e03835c95ba193c20f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.56
+      value: -2.87
       objectReference: {fileID: 0}
     - target: {fileID: 4001829114093178, guid: 09a1fa29451504e03835c95ba193c20f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.78
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 4001829114093178, guid: 09a1fa29451504e03835c95ba193c20f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -290,5 +290,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
