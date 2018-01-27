@@ -14,8 +14,8 @@ public class CameraMovement : MonoBehaviour {
 	void Update () {
 		if(player == null)
 			player = FindPlayer();
-
-		transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z) ;
+		if(player != null)
+			transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z) ;
 	}
 
 	GameObject FindPlayer(){
