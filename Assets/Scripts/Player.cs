@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	private int numJumps = 0;
-	private bool up = false;
+	private bool jump = false;
 	
 	public float maxSpeed = 10f;
 	public float moveMultiplier = 10f;
@@ -33,8 +33,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetKeyDown("up") && numJumps < maxJumps) {
-			up = true;
+		if(Input.GetButtonDown("Jump") && numJumps < maxJumps) {
+			jump = true;
 		}
 	}
 
@@ -49,8 +49,8 @@ public class Player : MonoBehaviour {
 			rb.AddForce(Vector2.left * moveMultiplier);
 		}
 
-		if(up && numJumps < maxJumps){
-			up = false;
+		if(jump && numJumps < maxJumps){
+			jump = false;
 			numJumps++;
 			rb.velocity = new Vector2(rb.velocity.x, 0);
 			rb.AddForce(Vector2.up * jumpMultiplier);
