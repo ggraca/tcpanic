@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	public float moveMultiplier = 10f;
 	public float jumpMultiplier = 70f;
 	public float fallMultiplier = 1.5f;
+	public float friction = 0.92f;
 
 	public int maxJumps = 2;
 
@@ -51,11 +52,14 @@ public class Player : MonoBehaviour {
 		if(up && numJumps < maxJumps){
 			up = false;
 			numJumps++;
-			Debug.Log(rb.velocity.y);
 			rb.velocity = new Vector2(rb.velocity.x, 0);
 			rb.AddForce(Vector2.up * jumpMultiplier);
 
 			if(jumpAudio != null) jumpAudio.Play();
+		}
+
+		if(!Input.GetKey("left") && !Input.GetKey("right") && rb.velocity.y == 0 && rb.velocity.x != 0) {
+			rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y);
 		}
 
 		if(rb.velocity.y < 0) {
@@ -69,8 +73,8 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D coll) {
-		if(coll.collider.CompareTag("floor")) {
+	void OnTriggerEnter2D(Collider2D coll) {
+		if(coll.CompareTag("floor")) {
 			numJumps = 0;
 		}
     }
