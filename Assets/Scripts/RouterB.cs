@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class RouterB : MonoBehaviour {	
 	
-	private GameLogic gl;
-
-	void Start(){
-		gl = (GameLogic) GameObject.FindObjectsOfType(typeof(GameLogic))[0];
-	}
-
 	void OnTriggerEnter2D(Collider2D coll) {
-		if(gl.state != "running") return;
+		GameLogic gl = (GameLogic) GameObject.FindObjectsOfType(typeof(GameLogic))[0];
+		
+		if(gl == null || gl.state != "running") return;
 
 		if(coll.CompareTag("Player")) {
 			Player player = (Player) GameObject.FindObjectOfType(typeof(Player));

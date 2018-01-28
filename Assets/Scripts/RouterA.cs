@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RouterA : MonoBehaviour {
-
-	private GameLogic gl;
-
-	void Start(){
-		gl = (GameLogic) GameObject.FindObjectsOfType(typeof(GameLogic))[0];
-	}
-
+	
 	void OnTriggerEnter2D(Collider2D coll) {
-		if(gl.state != "acking") return;
+		GameLogic gl = (GameLogic) GameObject.FindObjectsOfType(typeof(GameLogic))[0];
+		
+		if(gl == null || gl.state != "acking") return;
 
 		if(coll.CompareTag("Player")) {
 			Player player = (Player) GameObject.FindObjectOfType(typeof(Player));
