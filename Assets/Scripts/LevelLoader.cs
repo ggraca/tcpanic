@@ -8,11 +8,18 @@ public class LevelLoader : MonoBehaviour {
 	public GameObject blockSprite;
 	public GameObject routerA;
 	public GameObject routerB;
+	
+	public string level_name = "tutorial";
 	public Texture2D level;
+	public float level_time = 12f;
+	public float bronze = 0f;
+	public float silver = 2f;
+	public float gold = 4f;
+	public float best = 0f;
 
 	void Start () {
+		LoadScore();
 		GenerateLevel();
-
 		GameLogic gl = (GameLogic) GameObject.FindObjectOfType(typeof(GameLogic));
 		if(gl != null)
 			gl.Setup();
@@ -58,7 +65,8 @@ public class LevelLoader : MonoBehaviour {
 			sprite.transform.Rotate(0, 0, 270);
 			sprite.transform.parent = parent.transform;
 		}
-		
+
+		parent.transform.parent = transform;
 	}
 
 	bool PixelIsTerrain(int x, int y){
@@ -85,4 +93,26 @@ public class LevelLoader : MonoBehaviour {
 		}
 		return false;
 	}
+
+	public bool SaveScore(float score){
+		if(score <= best) return false;
+		best = score;
+
+		int stars = 0;
+		if(score > bronze) stars += 1;
+		if(score > silver) stars += 1;
+		if(score > gold) stars += 1;
+			
+		PlayerPrefs.SetFloat(level_name + "_score", score);
+		PlayerPrefs.SetInt(level_name + "_stars", stars);
+		PlayerPrefs.Save();
+
+		return true;
+	}
+
+	void LoadScore(){
+		float previous_score = PlayerPrefs.GetFloat(level_name + "_score", best);
+		if(previous_score > best) best = previous_score;
+	}
 }
+
