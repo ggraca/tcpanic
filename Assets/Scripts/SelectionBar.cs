@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectionBar : MonoBehaviour {
 	
-	public float initialPosition = 15f;
+	public float initialPosition = 12f;
 	public float increment = -2f;
 	public int item = 0;
 	public int maxItems = 2;
