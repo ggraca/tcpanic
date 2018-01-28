@@ -273,13 +273,13 @@ Prefab:
     - target: {fileID: 114341778773316686, guid: 59f2c5c1c05aa474a8ce549d1f0e864f,
         type: 2}
       propertyPath: level_name
-      value: level_1_2
+      value: level_1_3
       objectReference: {fileID: 0}
     - target: {fileID: 114341778773316686, guid: 59f2c5c1c05aa474a8ce549d1f0e864f,
         type: 2}
       propertyPath: level
       value: 
-      objectReference: {fileID: 2800000, guid: 62f48f7bd9793432b89afdd13996eeda, type: 3}
+      objectReference: {fileID: 2800000, guid: 8872203cb3ee94ef992b1a62dcfa80d1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59f2c5c1c05aa474a8ce549d1f0e864f, type: 2}
   m_IsPrefabParent: 0
