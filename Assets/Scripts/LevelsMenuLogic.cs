@@ -33,8 +33,13 @@ public class LevelsMenuLogic : MonoBehaviour {
 			timer += Time.deltaTime;
 			if(!(timer < .5f)) {
 				selectedSubLevel = 1;
-				MakeReachableSubLevel(selectedSubLevel);
 				SelectSubLevel(selectedSubLevel);
+				bool prevComplete = true;
+				for(int i=1; i<= numSubLevels && prevComplete; i++) {
+					MakeReachableSubLevel(i);
+					prevComplete = getSubLevelStars(i) > 0;
+				}
+				
 			}
 			return;
 		}
@@ -94,6 +99,15 @@ public class LevelsMenuLogic : MonoBehaviour {
 
 	string subLevelName(int subLevel) {
 		return levelName + "_" + subLevel;
+	}
+
+	int getSubLevelStars(int subLevel) {
+		foreach(LevelRoute r in FindObjectsOfType(typeof(LevelRoute))) {
+			if(r.subLevelNumber == subLevel) {
+				return r.GetStars();
+			}
+		}
+		return 0;
 	}
 
 	

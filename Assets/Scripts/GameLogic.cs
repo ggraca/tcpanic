@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameLogic : MonoBehaviour {
 
@@ -131,5 +133,7 @@ public class GameLogic : MonoBehaviour {
 		LevelLoader gl = (LevelLoader) GameObject.FindObjectOfType(typeof(LevelLoader));
 		if(gl.SaveScore(time_left))
 			ui_best_score.text = "best: " + time_left.ToString("0.00");
+
+		SceneManager.LoadScene("levels_menu");
 	}
 }
