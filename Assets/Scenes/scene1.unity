@@ -280,6 +280,26 @@ Prefab:
       propertyPath: level
       value: 
       objectReference: {fileID: 2800000, guid: fc7225e09eed3410eb659a45bb1d33b0, type: 3}
+    - target: {fileID: 114341778773316686, guid: 59f2c5c1c05aa474a8ce549d1f0e864f,
+        type: 2}
+      propertyPath: level_time
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114341778773316686, guid: 59f2c5c1c05aa474a8ce549d1f0e864f,
+        type: 2}
+      propertyPath: gold
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114341778773316686, guid: 59f2c5c1c05aa474a8ce549d1f0e864f,
+        type: 2}
+      propertyPath: silver
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114341778773316686, guid: 59f2c5c1c05aa474a8ce549d1f0e864f,
+        type: 2}
+      propertyPath: bronze
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59f2c5c1c05aa474a8ce549d1f0e864f, type: 2}
   m_IsPrefabParent: 0
