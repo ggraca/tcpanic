@@ -53,6 +53,10 @@ public class GameLogic : MonoBehaviour {
 		if(Input.GetButtonDown("Restart"))
 			SetupLevel();
 
+		if(Input.GetButtonDown("Cancel")) {
+			SceneManager.LoadScene("levels_menu");
+		}
+
 		if(state == "holding"){
 			if(Input.GetAxis("Horizontal") != 0 || Input.GetButton("Jump")){
 				state = "running";

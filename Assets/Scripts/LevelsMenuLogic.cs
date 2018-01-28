@@ -57,8 +57,14 @@ public class LevelsMenuLogic : MonoBehaviour {
 		if(Input.GetButtonDown("Submit")) {
 			switch(selectedSubLevel) {
 				case 1: SceneManager.LoadScene("scene1"); break;
+				case 2: SceneManager.LoadScene("scene_1_2"); break;
+				case 3: SceneManager.LoadScene("scene_1_3"); break;
 				default: break;
 			}
+		}
+
+		if(Input.GetButtonDown("Cancel")) {
+			SceneManager.LoadScene("menu");
 		}
 	}
 
