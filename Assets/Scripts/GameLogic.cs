@@ -11,8 +11,8 @@ public class GameLogic : MonoBehaviour {
 	// states: ["holding", "running", "acking", "success"]
 	public string state;
 
-	public GameObject routerA;
-	public GameObject routerB;
+	private GameObject routerA;
+	private GameObject routerB;
 
 	public GameObject packagePrefab;
 	public GameObject ackPrefab;
@@ -29,10 +29,12 @@ public class GameLogic : MonoBehaviour {
 	private float colortimer = 0f;
 
 	// Use this for initialization
-	void Start () {
+	public void Setup () {
 		if(levelAudioPrefab != null) levelAudio = Instantiate(levelAudioPrefab).GetComponent<AudioSource>();
 		if(levelAudio != null && !levelAudio.isPlaying) levelAudio.Play();
 
+		routerA = ((RouterA) GameObject.FindObjectsOfType(typeof(RouterA))[0]).gameObject;
+		routerB = ((RouterB) GameObject.FindObjectsOfType(typeof(RouterB))[0]).gameObject;
 		SetupLevel();
 	}
 	
