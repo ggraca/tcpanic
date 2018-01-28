@@ -14,6 +14,7 @@ public class LevelsMenuLogic : MonoBehaviour {
 
 	public Text stars = null;
 	public Text score = null;
+	public Text level_text = null;
 
 	private float timer = 0f;
 
@@ -26,21 +27,22 @@ public class LevelsMenuLogic : MonoBehaviour {
 
 		if(levelAudioPrefab != null) levelAudio = Instantiate(levelAudioPrefab).GetComponent<AudioSource>();
 		if(levelAudio != null && !levelAudio.isPlaying) levelAudio.Play();
+
+		selectedSubLevel = PlayerPrefs.GetInt(levelName + "_last_selected", selectedSubLevel);
 	}
 
 	void Update() {
 		if(timer < .5f) {
 			timer += Time.deltaTime;
 			if(!(timer < .5f)) {
-				selectedSubLevel = 1;
 				SelectSubLevel(selectedSubLevel);
 				bool prevComplete = true;
 				for(int i=1; i<= numSubLevels && prevComplete; i++) {
 					MakeReachableSubLevel(i);
 					prevComplete = getSubLevelStars(i) > 0;
 				}
-				
 			}
+			
 			return;
 		}
 
@@ -84,6 +86,7 @@ public class LevelsMenuLogic : MonoBehaviour {
 	void SelectSubLevel(int subLevel) {
 		foreach(LevelRoute r in FindObjectsOfType(typeof(LevelRoute))) {
 			if(r.subLevelNumber == subLevel) {
+				PlayerPrefs.SetInt(levelName + "_last_selected", selectedSubLevel);
 				r.Select();
 				if(r.GetStars() == 0) {
 					if(!r.Reachable()) {
