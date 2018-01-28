@@ -13,8 +13,9 @@ public class LevelLoader : MonoBehaviour {
 	void Start () {
 		GenerateLevel();
 
-		GameLogic gl = (GameLogic) GameObject.FindObjectsOfType(typeof(GameLogic))[0];
-		gl.Setup();
+		GameLogic gl = (GameLogic) GameObject.FindObjectOfType(typeof(GameLogic));
+		if(gl != null)
+			gl.Setup();
 	}
 
 	void GenerateLevel(){

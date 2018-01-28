@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
 			if(jumpAudio != null) jumpAudio.Play();
 		}
 
-		if(!Input.GetKey("left") && !Input.GetKey("right") && rb.velocity.y == 0 && rb.velocity.x != 0) {
+		if(Input.GetAxis("Horizontal") == 0 && rb.velocity.y == 0 && rb.velocity.x != 0) {
 			rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y);
 		}
 

@@ -40,6 +40,9 @@ public class GameLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetButtonDown("Restart"))
+			SetupLevel();
+
 		if(state == "holding"){
 			if(Input.GetAxis("Horizontal") != 0 || Input.GetButton("Jump")){
 				state = "running";
@@ -62,7 +65,6 @@ public class GameLogic : MonoBehaviour {
 			ui_timer.text = time_left.ToString();
 
 			if(time_left <= 0 || player.transform.position.y < -1){
-				KillPlayer();
 				SetupLevel();
 				return;
 			}
@@ -74,6 +76,8 @@ public class GameLogic : MonoBehaviour {
 		
 		time_left = level_time;
 		ui_timer.text = time_left.ToString();
+		
+		KillPlayer();
 		player = Instantiate(packagePrefab, routerA.transform.Find("spawn").position, Quaternion.identity);
 	}
 
