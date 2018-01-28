@@ -40,7 +40,7 @@ public class MenuLogic : MonoBehaviour {
 		if(Input.GetButtonDown("Submit")) {
 			SelectionBar sb = (SelectionBar) GameObject.FindObjectOfType(typeof(SelectionBar));
 			switch(sb.item) {
-				case 0: SceneManager.LoadScene("scene1"); break;
+				case 0: SceneManager.LoadScene("levels_menu"); break;
 				case 1: Application.Quit(); break;
 				default: break;
 			}

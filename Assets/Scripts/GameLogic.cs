@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameLogic : MonoBehaviour {
 
@@ -50,6 +52,10 @@ public class GameLogic : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown("Restart"))
 			SetupLevel();
+
+		if(Input.GetButtonDown("Cancel")) {
+			SceneManager.LoadScene("levels_menu");
+		}
 
 		if(state == "holding"){
 			if(Input.GetAxis("Horizontal") != 0 || Input.GetButton("Jump")){
@@ -131,5 +137,7 @@ public class GameLogic : MonoBehaviour {
 		LevelLoader gl = (LevelLoader) GameObject.FindObjectOfType(typeof(LevelLoader));
 		if(gl.SaveScore(time_left))
 			ui_best_score.text = "best: " + time_left.ToString("0.00");
+
+		SceneManager.LoadScene("levels_menu");
 	}
 }
