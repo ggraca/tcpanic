@@ -41,11 +41,11 @@ public class Player : MonoBehaviour {
 	// FixedUpdate should be used for physics update i.e. RigidBody
 	// https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html
 	void FixedUpdate () {
-		if(Input.GetKey("right")) {
+		if(Input.GetAxis("Horizontal") > 0) {
 			rb.AddForce(Vector2.right * moveMultiplier);
 		}
 
-		if(Input.GetKey("left")) {
+		if(Input.GetAxis("Horizontal") < 0) {
 			rb.AddForce(Vector2.left * moveMultiplier);
 		}
 
