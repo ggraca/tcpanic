@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212349202945295800}
   m_Layer: 8
   m_Name: Block Sprite
-  m_TagString: Untagged
+  m_TagString: block_sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

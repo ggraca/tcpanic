@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - floor
+  - block_sprite
   layers:
   - Default
   - TransparentFX

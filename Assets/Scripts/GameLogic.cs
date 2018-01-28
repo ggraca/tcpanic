@@ -24,6 +24,10 @@ public class GameLogic : MonoBehaviour {
 
 	public Text ui_timer;
 
+	private int colorid = 0;
+	private Color[] colors = {Color.red, Color.green, Color.blue, Color.yellow, Color.white};
+	private float colortimer = 0f;
+
 	// Use this for initialization
 	void Start () {
 		if(levelAudioPrefab != null) levelAudio = Instantiate(levelAudioPrefab).GetComponent<AudioSource>();
@@ -41,6 +45,17 @@ public class GameLogic : MonoBehaviour {
 		}
 
 		if(state == "running" || state == "acking"){
+			// Rainbow mode
+			// colortimer += Time.deltaTime;
+			// if(colortimer > 1f) {
+			// 	colortimer = 0f;
+			// 	foreach(GameObject obj in GameObject.FindGameObjectsWithTag("block_sprite")) {
+			// 		obj.GetComponent<Renderer>().material.SetColor("_MKGlowColor", colors[colorid]);
+			// 	}
+			// 	colorid++;
+			// 	if(colorid >= colors.Length) colorid=0;
+			// }
+
 			time_left -= Time.deltaTime;
 			ui_timer.text = time_left.ToString();
 

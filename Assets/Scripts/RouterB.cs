@@ -7,7 +7,7 @@ public class RouterB : MonoBehaviour {
 	private GameLogic gl;
 
 	void Start(){
-		gl = (GameLogic) GameObject.FindObjectsOfType(typeof(GameLogic))[0];
+		gl = (GameLogic) GameObject.FindObjectOfType(typeof(GameLogic));
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
